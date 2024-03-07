@@ -79,10 +79,9 @@ document.write("<hr>")
 document.write(`<h2>Listado Pacientes Dental con Isapre</h2>`)
 
 const isapreDental = dental.filter((i) => i.prevision === "ISAPRE")
+opcion = isapreDental
 
-isapreDental.forEach((d, i) => {
-    document.write(`<p>${d.paciente} - ${d.prevision}</p>`)
-})
+listar(opcion)
 
 document.write("<hr>")
 
@@ -90,13 +89,22 @@ document.write("<hr>")
 document.write(`<h2>Listado Pacientes Traumatologia con Fonasa</h2>`)
 
 const fonasaTraumatologia = traumatologia.filter((i) => i.prevision === "FONASA")
-
-fonasaTraumatologia.forEach((d, i) => {
-    document.write(`<p>${d.paciente} - ${d.prevision}</p>`)
-})
-
+opcion = fonasaTraumatologia
+listar(opcion)
 
 document.write("<hr>")
+
+
+// Funcion de Despliegue Ejercicio 5 y 6 (Listar)
+function listar(opcion) {
+
+    opcion.forEach((d, i) => {
+        document.write(`<p>${d.paciente} - ${d.prevision}</p>`)
+
+    })
+
+}
+
 
 
 document.write(`<p>Cantidad de atenciones para Radiología: ${radiologia.length}</p>`);
